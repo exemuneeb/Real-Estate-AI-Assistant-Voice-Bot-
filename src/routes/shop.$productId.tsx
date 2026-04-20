@@ -86,7 +86,7 @@ function ProductPage() {
           </div>
 
           <ul className="mt-10 space-y-2 text-sm text-muted-foreground">
-            {product.details.map((d) => (
+            {product.details.map((d: string) => (
               <li key={d} className="flex gap-3">
                 <span className="text-gold">✦</span>
                 {d}
