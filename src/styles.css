@@ -4,16 +4,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap');
 
 @theme inline {
   --font-display: "Bebas Neue", sans-serif;
   --font-body: "Barlow", sans-serif;
+=======
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@100..900&display=swap");
+
+@theme inline {
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+<<<<<<< HEAD
+=======
+  --radius-2xl: calc(var(--radius) + 8px);
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -34,6 +46,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+<<<<<<< HEAD
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
 
@@ -135,5 +148,79 @@
   }
   .underline-gold:hover {
     background-size: 100% 1px;
+=======
+  --color-sand: var(--sand);
+  --color-sand-deep: var(--sand-deep);
+  --color-clay: var(--clay);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Warm Sand palette */
+  --background: oklch(0.985 0.008 80);          /* #faf8f5 */
+  --foreground: oklch(0.28 0.025 60);           /* deep clay text */
+  --card: oklch(0.978 0.012 82);
+  --card-foreground: oklch(0.28 0.025 60);
+  --popover: oklch(0.985 0.008 80);
+  --popover-foreground: oklch(0.28 0.025 60);
+  --primary: oklch(0.45 0.04 55);               /* #8b7355 clay */
+  --primary-foreground: oklch(0.985 0.008 80);
+  --secondary: oklch(0.94 0.018 80);            /* #f0ebe3 */
+  --secondary-foreground: oklch(0.32 0.03 60);
+  --muted: oklch(0.94 0.018 80);
+  --muted-foreground: oklch(0.5 0.025 65);
+  --accent: oklch(0.78 0.05 75);                /* #c9b99a */
+  --accent-foreground: oklch(0.28 0.025 60);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.985 0.008 80);
+  --border: oklch(0.88 0.018 75);
+  --input: oklch(0.92 0.015 78);
+  --ring: oklch(0.45 0.04 55);
+
+  --sand: oklch(0.94 0.018 80);
+  --sand-deep: oklch(0.78 0.05 75);
+  --clay: oklch(0.45 0.04 55);
+
+  --shadow-soft: 0 10px 40px -10px oklch(0.4 0.04 55 / 0.15);
+  --shadow-elegant: 0 30px 60px -20px oklch(0.3 0.04 55 / 0.25);
+  --gradient-warm: linear-gradient(135deg, oklch(0.94 0.018 80), oklch(0.985 0.008 80));
+  --gradient-overlay: linear-gradient(180deg, oklch(0.2 0.03 50 / 0) 0%, oklch(0.2 0.03 50 / 0.7) 100%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
   }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
+  }
+}
+
+@layer utilities {
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .bg-gradient-warm { background-image: var(--gradient-warm); }
+  .bg-gradient-overlay { background-image: var(--gradient-overlay); }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    70% { transform: scale(1.4); opacity: 0; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+  .animate-pulse-ring { animation: pulse-ring 1.6s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up { animation: fade-up 0.7s ease-out both; }
 }

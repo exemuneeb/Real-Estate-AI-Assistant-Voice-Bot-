@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 project_id = "chsfntcuqjtltwqgnwcy"
 
 [functions.chat]
 verify_jwt = false
+=======
+project_id = "umfdauzntjhkjpbfnpob"
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2

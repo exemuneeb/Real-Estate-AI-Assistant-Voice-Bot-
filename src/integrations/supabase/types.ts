@@ -14,6 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
+<<<<<<< HEAD
       leads: {
         Row: {
           budget: string | null
@@ -53,6 +54,9 @@ export type Database = {
         }
         Relationships: []
       }
+=======
+      [_ in never]: never
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
     }
     Views: {
       [_ in never]: never

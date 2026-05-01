@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+<<<<<<< HEAD
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -18,6 +19,18 @@ import { Route as ShopProductIdRouteImport } from './routes/shop.$productId'
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+=======
+import { Route as ListingsRouteImport } from './routes/listings'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as ListingsIdRouteImport } from './routes/listings.$id'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+
+const ListingsRoute = ListingsRouteImport.update({
+  id: '/listings',
+  path: '/listings',
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -35,31 +48,56 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+<<<<<<< HEAD
 const ShopProductIdRoute = ShopProductIdRouteImport.update({
   id: '/$productId',
   path: '/$productId',
   getParentRoute: () => ShopRoute,
+=======
+const ListingsIdRoute = ListingsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ListingsRoute,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+<<<<<<< HEAD
   '/shop': typeof ShopRouteWithChildren
   '/shop/$productId': typeof ShopProductIdRoute
+=======
+  '/listings': typeof ListingsRouteWithChildren
+  '/api/chat': typeof ApiChatRoute
+  '/listings/$id': typeof ListingsIdRoute
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+<<<<<<< HEAD
   '/shop': typeof ShopRouteWithChildren
   '/shop/$productId': typeof ShopProductIdRoute
+=======
+  '/listings': typeof ListingsRouteWithChildren
+  '/api/chat': typeof ApiChatRoute
+  '/listings/$id': typeof ListingsIdRoute
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+<<<<<<< HEAD
   '/shop': typeof ShopRouteWithChildren
   '/shop/$productId': typeof ShopProductIdRoute
 }
@@ -69,22 +107,60 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/about' | '/contact' | '/shop' | '/shop/$productId'
   id: '__root__' | '/' | '/about' | '/contact' | '/shop' | '/shop/$productId'
+=======
+  '/listings': typeof ListingsRouteWithChildren
+  '/api/chat': typeof ApiChatRoute
+  '/listings/$id': typeof ListingsIdRoute
+}
+export interface FileRouteTypes {
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/listings'
+    | '/api/chat'
+    | '/listings/$id'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/about' | '/contact' | '/listings' | '/api/chat' | '/listings/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/listings'
+    | '/api/chat'
+    | '/listings/$id'
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+<<<<<<< HEAD
   ShopRoute: typeof ShopRouteWithChildren
+=======
+  ListingsRoute: typeof ListingsRouteWithChildren
+  ApiChatRoute: typeof ApiChatRoute
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+<<<<<<< HEAD
     '/shop': {
       id: '/shop'
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
+=======
+    '/listings': {
+      id: '/listings'
+      path: '/listings'
+      fullPath: '/listings'
+      preLoaderRoute: typeof ListingsRouteImport
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -108,16 +184,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+<<<<<<< HEAD
     '/shop/$productId': {
       id: '/shop/$productId'
       path: '/$productId'
       fullPath: '/shop/$productId'
       preLoaderRoute: typeof ShopProductIdRouteImport
       parentRoute: typeof ShopRoute
+=======
+    '/listings/$id': {
+      id: '/listings/$id'
+      path: '/$id'
+      fullPath: '/listings/$id'
+      preLoaderRoute: typeof ListingsIdRouteImport
+      parentRoute: typeof ListingsRoute
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
     }
   }
 }
 
+<<<<<<< HEAD
 interface ShopRouteChildren {
   ShopProductIdRoute: typeof ShopProductIdRoute
 }
@@ -127,12 +220,30 @@ const ShopRouteChildren: ShopRouteChildren = {
 }
 
 const ShopRouteWithChildren = ShopRoute._addFileChildren(ShopRouteChildren)
+=======
+interface ListingsRouteChildren {
+  ListingsIdRoute: typeof ListingsIdRoute
+}
+
+const ListingsRouteChildren: ListingsRouteChildren = {
+  ListingsIdRoute: ListingsIdRoute,
+}
+
+const ListingsRouteWithChildren = ListingsRoute._addFileChildren(
+  ListingsRouteChildren,
+)
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+<<<<<<< HEAD
   ShopRoute: ShopRouteWithChildren,
+=======
+  ListingsRoute: ListingsRouteWithChildren,
+  ApiChatRoute: ApiChatRoute,
+>>>>>>> 1c6e130a11c2642a1fdda806922bcd446f8f4eb2
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
